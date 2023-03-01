@@ -16,7 +16,7 @@ from deeprc.task_definitions import TaskDefinition
 
 
 def evaluate(model: torch.nn.Module, dataloader: torch.utils.data.DataLoader, task_definition: TaskDefinition,
-             show_progress: bool = True, device: torch.device = torch.device('cuda:0')) -> dict:
+             show_progress: bool = True, device: torch.device = torch.device('mps')) -> dict:
     """Compute DeepRC model scores on given dataset for tasks specified in `task_definition`
     
     Parameters
@@ -30,7 +30,7 @@ def evaluate(model: torch.nn.Module, dataloader: torch.utils.data.DataLoader, ta
     show_progress: bool
          Show progressbar?
     device: torch.device
-         Device to use for computations. E.g. `torch.device('cuda:0')` or `torch.device('cpu')`.
+         Device to use for computations. E.g. `torch.device('mps')` or `torch.device('cpu')`.
     
     Returns
     ---------
@@ -74,7 +74,7 @@ def train(model: torch.nn.Module, task_definition: TaskDefinition, early_stoppin
           trainingset_dataloader: torch.utils.data.DataLoader, trainingset_eval_dataloader: torch.utils.data.DataLoader,
           validationset_eval_dataloader: torch.utils.data.DataLoader,
           results_directory: str = "results", n_updates: int = int(1e5), show_progress: bool = True,
-          load_file: str = None, device: torch.device = torch.device('cuda:0'),
+          load_file: str = None, device: torch.device = torch.device('mps'),
           num_torch_threads: int = 3, learning_rate: float = 1e-4, l1_weight_decay: float = 0,
           l2_weight_decay: float = 0, log_training_stats_at: int = int(1e2), evaluate_at: int = int(5e3),
           ignore_missing_target_values: bool = True):
@@ -110,7 +110,7 @@ def train(model: torch.nn.Module, task_definition: TaskDefinition, early_stoppin
     load_file: str
          Path to load checkpoint of previously saved model from
     device: torch.device
-         Device to use for computations. E.g. `torch.device('cuda:0')` or `torch.device('cpu')`.
+         Device to use for computations. E.g. `torch.device('mps')` or `torch.device('cpu')`.
          Currently, only devices which support 16 bit float are supported.
     num_torch_threads: int
          Number of parallel threads to allow PyTorch

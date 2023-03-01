@@ -22,8 +22,8 @@ parser.add_argument('--evaluate_at', help='Evaluate model on training and valida
                                           ' Default: int(5e3)', type=int,
                     default=int(5e3))
 parser.add_argument('--device', help='Device to use for NN computations, as passed to `torch.device()`. '
-                                     'Default: "cuda:0".',
-                    type=str, default="cuda:0")
+                                     'Default: "mps".',
+                    type=str, default="mps")
 parser.add_argument('--rnd_seed', help='Random seed to use for PyTorch and NumPy. Results will still be '
                                        'non-deterministic due to multiprocessing but weight initialization will be the'
                                        ' same). Default: 0.',
