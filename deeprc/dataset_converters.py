@@ -75,7 +75,7 @@ class DatasetToHDF5(object):
         
         Examples
         ----------
-        >>> n_worker_processes = 5
+        >>> n_worker_processes = 1
         >>> repertoiresdata_directory = f"datasets/example_dataset_format/repertoires"
         >>> output_file = f"datasets/example_dataset_format/repertoires.hdf5"
         >>> print(f"Converting: {repertoiresdata_directory} to {output_file}")
@@ -197,7 +197,7 @@ class DatasetToHDF5(object):
             raise e
         return amino_acid_sequences
     
-    def save_data_to_file(self, output_file: str, n_workers: int = 50, large_repertoires: bool = False):
+    def save_data_to_file(self, output_file: str, n_workers: int = 1, large_repertoires: bool = False):
         """ Read repertoire files and convert dataset to hdf5 container
          
          Set `large_repertoires` to True for large repertoire files if you experience memory problems during
@@ -297,7 +297,7 @@ class DatasetToHDF5(object):
 
 
 if __name__ == '__main__':
-    n_worker_processes = 5
+    n_worker_processes = 1
     repertoiresdata_directory = f"datasets/example_dataset_format/repertoires"
     output_file = f"datasets/example_dataset_format/repertoires.hdf5"
     print(f"Converting: {repertoiresdata_directory} to {output_file}")

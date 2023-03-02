@@ -16,7 +16,7 @@ from deeprc.task_definitions import TaskDefinition, BinaryTarget
 
 
 def simulated_dataset(dataset_path: str = None, dataset_id: int = 0, task_definition: TaskDefinition = None,
-                      cross_validation_fold: int = 0, n_worker_processes: int = 4, batch_size: int = 4,
+                      cross_validation_fold: int = 0, n_worker_processes: int = 1, batch_size: int = 4,
                       inputformat: str = 'NCL', keep_dataset_in_ram: bool = True,
                       sample_n_sequences: int = int(1e4), verbose: bool = True) \
         -> Tuple[TaskDefinition, DataLoader, DataLoader, DataLoader, DataLoader]:
@@ -111,7 +111,7 @@ def simulated_dataset(dataset_path: str = None, dataset_id: int = 0, task_defini
 
 
 def lstm_generated_dataset(dataset_path: str = None, dataset_id: int = 0, task_definition: TaskDefinition = None,
-                           cross_validation_fold: int = 0, n_worker_processes: int = 4, batch_size: int = 4,
+                           cross_validation_fold: int = 0, n_worker_processes: int = 1, batch_size: int = 4,
                            inputformat: str = 'NCL', keep_dataset_in_ram: bool = True,
                            sample_n_sequences: int = int(1e4), verbose: bool = True) \
         -> Tuple[TaskDefinition, DataLoader, DataLoader, DataLoader, DataLoader]:
@@ -207,7 +207,7 @@ def lstm_generated_dataset(dataset_path: str = None, dataset_id: int = 0, task_d
 
 
 def cmv_implanted_dataset(dataset_path: str = None, dataset_id: int = 0, task_definition: TaskDefinition = None,
-                          cross_validation_fold: int = 0, n_worker_processes: int = 4, batch_size: int = 4,
+                          cross_validation_fold: int = 0, n_worker_processes: int = 1, batch_size: int = 4,
                           inputformat: str = 'NCL', keep_dataset_in_ram: bool = True,
                           sample_n_sequences: int = int(1e4),  verbose: bool = True) \
         -> Tuple[TaskDefinition, DataLoader, DataLoader, DataLoader, DataLoader]:
@@ -304,7 +304,7 @@ def cmv_implanted_dataset(dataset_path: str = None, dataset_id: int = 0, task_de
 
 
 def cmv_dataset(dataset_path: str = None, task_definition: TaskDefinition = None,
-                cross_validation_fold: int = 0, n_worker_processes: int = 4, batch_size: int = 4,
+                cross_validation_fold: int = 0, n_worker_processes: int = 1, batch_size: int = 4,
                 inputformat: str = 'NCL', keep_dataset_in_ram: bool = True,
                 sample_n_sequences: int = int(1e4), verbose: bool = True) \
         -> Tuple[TaskDefinition, DataLoader, DataLoader, DataLoader, DataLoader]:
